@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ parent_name }}</title>
+    <style>
+
+   </style>
+</head>
+<body>
+    <center><h2>{{ parent_name }}</h2></center><br><br>
+    {% for item in list_items %}
+        <a href="/details?country={{ item }}"><h3>{{ item }}</h3></a>
+    {% endfor %}
+</body>
+{% endblock content %}

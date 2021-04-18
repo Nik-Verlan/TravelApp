@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Оставить комментарий</title>
+</head>
+<body>
+<center><h3>Форма для комментариев</h3></center><br>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <center><input type="Submit" name="submit" value="Submit"/></center>
+</form>
+</body>
+{% endblock content %}

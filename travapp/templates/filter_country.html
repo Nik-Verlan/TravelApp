@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <center><h3>Страны, которые вам подходят</h3></center><br>
+    {% if requested_country %}
+        {% for country in requested_country %}
+            <center><a href="/details?country={{ country.name }}"><h3>{{ country.name }}</h3></a></center>
+        {% endfor %}
+    {% else %}
+        <center>Увы, таких стран нет</center>
+    {% endif %}<br>
+
+</body>
+{% endblock content %}

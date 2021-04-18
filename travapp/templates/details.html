@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ country_name }}</title>
+</head>
+<body>
+    <center><h2>{{ requested_country.name }}</h2></center><br>
+    Материк: {{ requested_country.continent }}<br>
+    Морские курорты: {{ requested_country.sea }}<br>
+    Гонолыжные курорты: {{ requested_country.mountain }}<br>
+    Нужна ли виза беларусам: {{ requested_country.visa }}<br>
+    Туристическое описание: {{ requested_country.description }}<br><br>
+
+    <center><h3>Комментарии</h3></center>
+    {% if comments %}
+        {% for comment in comments %}
+            Короткий коммент: {{ comment.name }} <br>
+            Комментарий: {{ comment.comment }} <br>
+            Оценка: {{ comment.rating }} <br>
+        {% endfor %}
+    {% else %}
+        <center>Комментариев и оценок пока нет</center><br>
+    {% endif %}<br>
+
+</body>
+{% endblock content %}
